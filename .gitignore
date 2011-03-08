@@ -1,0 +1,17 @@
+*.pyc
+.project
+.pydevproject
+.settings
+*.coverage
+*~
+docs/_build
+dist
+*egg-info*
+htmlcov
+bin/
+include/
+lib/
+distribute*
+share/
+*.sqlite
+
