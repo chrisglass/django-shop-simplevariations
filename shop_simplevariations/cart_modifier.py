@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 from shop.cart.cart_modifiers_base import BaseCartModifier
-from shop.models.cartmodel import CartItemOption
+from shop_simplevariations.models import CartItemOption
 
 class ProductOptionsModifier(BaseCartModifier):
     '''

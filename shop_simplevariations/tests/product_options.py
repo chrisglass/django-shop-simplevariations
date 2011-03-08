@@ -4,9 +4,10 @@ from decimal import Decimal
 from django.contrib.auth.models import User
 from django.test.testcases import TestCase
 from shop.cart.modifiers_pool import cart_modifiers_pool
-from shop.models.cartmodel import Cart, CartItem, CartItemOption
-from shop.models.productmodel import Product, OptionGroup, Option
+from shop.models.cartmodel import Cart, CartItem
+from shop.models.productmodel import Product
 from shop.tests.utils.context_managers import SettingsOverride
+from shop_simplevariations.models import OptionGroup, Option, CartItemOption
 
 class ProductOptionsTestCase(TestCase):
     
