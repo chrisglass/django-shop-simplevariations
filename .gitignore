@@ -1,5 +1,5 @@
 *.pyc
-.project
+7.project
 .pydevproject
 .settings
 *.coverage
@@ -14,4 +14,4 @@ lib/
 distribute*
 share/
 *.sqlite
-
+build/
