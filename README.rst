@@ -14,7 +14,7 @@ Installation
 This requires django SHOP to work (https://github.com/chrisglass/django-shop)
 
 * Add the app to your installed app
-* Add `shop.simplevariations.cart_modifier.ProductOptionsModifier` to your `SHOP_CART_MODIFIERS` setting.
+* Add `shop_simplevariations.cart_modifier.ProductOptionsModifier` to your `SHOP_CART_MODIFIERS` setting.
 
 Usage
 ======
