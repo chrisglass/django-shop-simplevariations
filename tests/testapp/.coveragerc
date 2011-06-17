@@ -1,12 +1,10 @@
 [run]
 branch = True
 source =
-    shop
-    shop.addressmodel
+    shop_simplevariations
 omit =
     ../../*migrations*
     ../../*tests*
     /usr/share/*
 [report]
 precision = 2
-
