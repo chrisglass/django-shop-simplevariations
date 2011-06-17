@@ -37,6 +37,7 @@ class SimplevariationCartDetails(CartDetails):
             if len(cartitemoptions) == len(option_ids):
                 found_cartitem_id = cartitem.id
                 merge = True
+                break
 
         #if we found a CartItem object that has the same options, we need
         #to select this one instead of just any CartItem that belongs to this

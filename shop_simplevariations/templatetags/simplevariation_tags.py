@@ -1,7 +1,5 @@
 from django import template
 
-from ..models import CartItemOption
-
 register = template.Library()
 
 

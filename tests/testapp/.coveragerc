@@ -1,0 +1,12 @@
+[run]
+branch = True
+source =
+    shop
+    shop.addressmodel
+omit =
+    ../../*migrations*
+    ../../*tests*
+    /usr/share/*
+[report]
+precision = 2
+
