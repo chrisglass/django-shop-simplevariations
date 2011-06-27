@@ -16,7 +16,7 @@ class ProductOptionsModifier(BaseCartModifier):
 
         for selected_opt in selected_options:
             option_obj = selected_opt.option
-            data = (option_obj.name, option_obj.price)
+            data = (option_obj.name, option_obj.price * cart_item.quantity)
             cart_item.extra_price_fields.append(data)
 
         return cart_item
