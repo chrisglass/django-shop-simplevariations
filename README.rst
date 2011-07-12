@@ -82,7 +82,7 @@ Next create the drop down lists of OptionsGroups and Options:
         <h2>Variations:</h2>
         {% for option_group in option_groups %}
           <label for="add_item_option_group_{{ option_group.id }}">{{ option_group.name }}</label>
-          {% with options=option_group|get_options %}
+          {% with option_group|get_options as options %}
             <select name="add_item_option_group_{{ option_group.id }}">
               {% for option in options %}
                 <option value="{{ option.id }}">{{ option.name }}</option>
