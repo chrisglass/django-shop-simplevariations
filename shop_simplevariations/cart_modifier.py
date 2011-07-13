@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 from shop.cart.cart_modifiers_base import BaseCartModifier
-from shop_simplevariations.models import CartItemOption
+from shop_simplevariations.models import CartItemOption, CartItemTextOption
 
 class ProductOptionsModifier(BaseCartModifier):
     '''
@@ -20,3 +20,15 @@ class ProductOptionsModifier(BaseCartModifier):
             cart_item.extra_price_fields.append(data)
 
         return cart_item
+    
+    
+class TextOptionsModifier(BaseCartModifier):
+    """
+    THis price modifier appends all the text options it finds in the database for
+    a given cart item to the item's extra_price_fields.
+    """
+    def add_extra_cart_item_price_field(self, cart_item):
+        text_options = CartItemTextOption.objects.filter(cartitem=cart_item)
+        for text_opt in text_options:
+            data = ('Text: "%s"', text_opt.text_option.price)
+            cart_item.extra_price_fields.append(data)
