@@ -7,7 +7,7 @@ setup(
     author="Christopher Glass",
     author_email="tribaal@gmail.com",
     name='django-shop-simplevariations',
-    version='0.0.1',
+    version='0.0.2',
     description='A simple to use product variations module for django SHOP',
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     url='http://www.django-shop.org/',
@@ -16,7 +16,7 @@ setup(
     classifiers=CLASSIFIERS,
     install_requires=[
         'Django>=1.2',
-        'django-shop',
+        'django-shop>=0.0.9',
     ],
     packages=find_packages(exclude=["example", "example.*"]),
     zip_safe = False
