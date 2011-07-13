@@ -32,7 +32,7 @@ class TextOptionsModifier(BaseCartModifier):
         text_options = CartItemTextOption.objects.filter(cartitem=cart_item)
         for text_opt in text_options:
             price = text_opt.text_option.price
-            data = ('Text: "%s"', price)
+            data = ('%s: "%s"' % (text_opt.text_option.name,text_opt.text), price)
             # Don't forget to update the running total!
             cart_item.current_total = cart_item.current_total + price
             #Append to the cart_item's list now.
