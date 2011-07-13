@@ -7,8 +7,6 @@ from shop.views.cart import CartDetails
 from shop_simplevariations.models import TextOption, CartItemTextOption
 
 
-
-
 class SimplevariationCartDetails(CartDetails):
     """Cart view that answers GET and POSTS request."""
 
