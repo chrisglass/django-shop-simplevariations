@@ -37,11 +37,15 @@ class SimplevariationCartDetails(CartDetails):
         for cartitem in qs:
             # for each CartItem in the Cart, get it's options and text options
             cartitemoptions = CartItemOption.objects.filter(
-                cartitem=cartitem, option__in=option_ids, 
+                cartitem=cartitem, option__in=option_ids
+                )
+                
+            cartitemtxtoptions = CartItemTextOption.objects.filter(
                 text_option__in=text_option_ids.keys(),
-                text_option__text__in=text_option_ids.values())
+                text__in=text_option_ids.values()
+                )
             
-            if len(cartitemoptions) == (len(option_ids) + len(text_option_ids)):
+            if len(cartitemoptions) + len(cartitemtxtoptions) == (len(option_ids) + len(text_option_ids)):
                 found_cartitem_id = cartitem.id
                 merge = True
                 break
