@@ -36,7 +36,7 @@ class CartItemTextOption(models.Model):
     text = models.CharField(max_length=255) # The actual text the client input
     
     text_option = models.ForeignKey(TextOption)
-    cartitem = models.ForeignKey(CartItem)
+    cartitem = models.ForeignKey(CartItem, realted_name='text_option')
     
     def __unicode__(self):
         return self.text
