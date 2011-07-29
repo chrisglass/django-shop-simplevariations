@@ -93,6 +93,17 @@ Next create the drop down lists of OptionsGroups and Options:
       </div>
     {% endif %}
   {% endwith %}
+  {% with text_options=object.text_options.all %}
+    {% if text_options %}
+      <div>
+        <h2>Text options:</h2>
+        {% for text_option in text_options %}
+          <label for="add_item_text_option_{{ text_option.id }}">{{ text_option.name }}</label>
+          <input type="text" name="add_item_text_option_{{ text_option.id }}" value=""/>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
   <input type="hidden" name="add_item_id" value="{{object.id}}">
   <input type="hidden" name="add_item_quantity" value="1">
   <input type="submit" value="Add to cart">
