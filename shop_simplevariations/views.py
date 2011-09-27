@@ -27,8 +27,10 @@ class SimplevariationCartDetails(CartDetails):
                 option_ids.append(self.request.POST[key])
             elif key.startswith('add_item_text_option_'):
                 id = key.split('add_item_text_option_')[1]
-                text_option_ids.update({id:self.request.POST[key]})
-
+                txt = self.request.POST[key]
+                if txt != '':
+                    text_option_ids.update({id:txt})
+                    
         #now we need to find out if there are any cart items that have the exact
         #same set of options
         qs = CartItem.objects.filter(cart=cart_object).filter(product=product)
@@ -80,11 +82,12 @@ class SimplevariationCartDetails(CartDetails):
             elif key.startswith('add_item_text_option_'):
                 id = key.split('add_item_text_option_')[1]
                 txt = self.request.POST[key]
-                txt_opt = TextOption.objects.get(pk=id)
-                cito = CartItemTextOption()
-                cito.text_option = txt_opt
-                cito.text = txt
-                cito.cartitem = cart_item
-                cito.save()
+                if txt != '':
+                    txt_opt = TextOption.objects.get(pk=id)
+                    cito = CartItemTextOption()
+                    cito.text_option = txt_opt
+                    cito.text = txt
+                    cito.cartitem = cart_item
+                    cito.save()
                 
         return self.success()
