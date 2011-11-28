@@ -1,6 +1,6 @@
+#-*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, url
-
-from .views import SimplevariationCartDetails
+from shop_simplevariations.views import SimplevariationCartDetails
 
 
 urlpatterns = patterns('',
@@ -12,7 +12,7 @@ urlpatterns = patterns('',
         name='cart_item_add' ),
     url(r'^$',
         SimplevariationCartDetails.as_view(), name='cart'),
-    url(r'^cart/update/$',
+    url(r'^update/$',
         SimplevariationCartDetails.as_view(action='put'),
         name='cart_update'),
     url('^item/(?P<id>[0-9A-Za-z-_.//]+)$',
