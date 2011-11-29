@@ -1,6 +1,6 @@
-================================
+===============================
 django SHOP - Simple Variations
-================================
+===============================
 
 This app's purpose is to provide a way to quickly create product variations for
 most simple cases.
@@ -48,7 +48,7 @@ Usage
 * Bind it to a product
 * Add options and the corresponding price to the group.
 * When a `CartItemOption` object is linked to a `CartItem`, the option's value
-  will be added to the CartItem's price and a corresponding extra field willbe
+  will be added to the CartItem's price and a corresponding extra field will be
   added to the Cart/Order.
 * Override django-shop's `product_detail.html` template and add selection
   elements so that your users can select variations.
