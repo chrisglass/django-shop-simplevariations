@@ -17,7 +17,7 @@ class SimplevariationCartDetails(CartDetails):
         if not product_quantity:
             product_quantity = 1
         product = Product.objects.get(pk=product_id)
-        cart_object = get_or_create_cart(self.request)
+        cart_object = get_or_create_cart(self.request, save=True)
 
         #now we need to find out which options have been chosen by the user
         option_ids = []
