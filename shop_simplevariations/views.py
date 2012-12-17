@@ -65,6 +65,9 @@ class SimplevariationCartDetails(CartDetails):
 
     def post_success(self, product, cart_item):
         super(SimplevariationCartDetails, self).post_success(product, cart_item)
+        # if no cart_item was added, just skip
+        if cart_item is None:
+            return self.success()
         #if this cart item already has an option set we don't need to do
         #anything because an existing option set will never change. if we got a
         #set of different options, that would become a new CartItem.
