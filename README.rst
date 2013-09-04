@@ -17,7 +17,7 @@ This requires django SHOP to work (https://github.com/chrisglass/django-shop)
 
 * Add the app to your INSTALLED_APPS in your settings.py
 * Add `shop_simplevariations.cart_modifier.ProductOptionsModifier` and 
-  'shop_simplevariations.cart_modifier.TextOptionsModifier' to your
+  `shop_simplevariations.cart_modifier.TextOptionsModifier` to your 
   `SHOP_CART_MODIFIERS` setting.
 * Add `(r'^shop/cart/', include(simplevariations_urls)),` to your `urls.py`
   just before `(r'^shop/', include(shop_urls)),`
