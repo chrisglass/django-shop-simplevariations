@@ -16,7 +16,7 @@ class ProductOptionsModifier(BaseCartModifier):
         for selected_opt in selected_options:
             option_obj = selected_opt.option
             price = option_obj.price * cart_item.quantity
-            data = (option_obj.name, price)
+            data = ('%s: "%s"' % (text_opt.text_option.name,text_opt.text), price)
             # Don't forget to update the running total!
             cart_item.current_total = cart_item.current_total + price
             cart_item.extra_price_fields.append(data)
