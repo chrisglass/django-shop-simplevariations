@@ -7,7 +7,7 @@ class ProductOptionsModifier(BaseCartModifier):
     This modifier adds an extra field to the cart to let the lineitem "know"
     about product options and their respective price.
     '''
-    def process_cart_item(self, cart_item, state):
+    def process_cart_item(self, cart_item, request):
         '''
         This adds a list of price modifiers depending on the product options
         the client selected for the current cart_item (if any)
@@ -28,7 +28,7 @@ class TextOptionsModifier(BaseCartModifier):
     This price modifier appends all the text options it finds in the database for
     a given cart item to the item's extra_price_fields.
     """
-    def process_cart_item(self, cart_item, state):
+    def process_cart_item(self, cart_item, request):
         text_options = CartItemTextOption.objects.filter(cartitem=cart_item)
         for text_opt in text_options:
             price = text_opt.text_option.price
